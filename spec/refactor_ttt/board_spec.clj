@@ -2,17 +2,6 @@
   (:require [speclj.core :refer :all]
             [refactor-ttt.board :refer :all]))
 (let [board ["-" "-" "-" "-" "-" "-" "-" "-" "-"]]
-(describe "markers"
-  (it "blank is '-'"
-      (should= "-"
-               (:blank mark)))
-  (it "player is 'x'"
-      (should= "x"
-               (:player mark)))
-  (it "computer is 'o'"
-      (should= "o"
-               (:computer mark))))
-
 (describe "new-board"
   (it "an 'blank' vector"
     (should= board

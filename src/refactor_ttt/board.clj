@@ -1,9 +1,5 @@
-(ns refactor-ttt.board)
-
-(def mark
-  {:blank "-"
-   :player "x"
-   :computer "o"})
+(ns refactor-ttt.board
+  (:require [refactor-ttt.constants :refer :all]))
 
 (def new-board
   (vec (repeat 9 (:blank mark))))
