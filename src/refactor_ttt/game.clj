@@ -8,22 +8,22 @@
   (println "\n\n")
   (show board))
 
+(defn message [turn]
+  (:win-message (turn player-type)))
+
 (defn get-winner [board]
   (if (win? board :player)
-      ((:win-message (:player player-type)))
-      ((:win-message (:computer player-type)))))
+      (message :player)
+      (message :computer)))
 
 (defn get-results [board]
   (if (draw? board)
       (println "Draw! Nobody wins!")
       (get-winner board)))
 
-(defn check? [board]
-  (game-over? board))
-
 (defn game [board turn]
   (display board)
-  (if (check? board)
+  (if (game-over? board)
       (get-results board)
       (let [index ((:move (turn player-type)) board)]
         (if (valid-move? board index)
