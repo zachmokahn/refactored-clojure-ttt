@@ -11,7 +11,7 @@
   (keep-indexed (fn[index space] (if (= space (:blank mark)) index)) board))
 
 (defn render [board index]
-  (str " " (if (= (get board index) "-") index (get board index)) " "))
+  (str " " (if (= (get board index) (:blank mark)) index (get board index)) " "))
 
 (defn show [board]
   (println (str
